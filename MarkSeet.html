@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarkSheet</title>
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
+ 
+</head>
+<style>
+    table,tr,td.th{
+        border: 2px solid black;
+        border-collapse: collapse;
+        padding: 20px;
+        text-align: center;
+        width: 50%;
+    }
+</style>
+<body>
+   <table border="3">
+<form action="">
+    <tr>
+        <th colspan="2">MarkSheet</th>
+    </tr>
+    <tr>
+        <td><label>Name</label></td>
+        <td><input type="text" id="n"></td>
+    </tr>
+    <tr>
+        <td><label>Father Name</label></td>
+        <td><input type="text" id="fn"></td>
+    </tr>
+    <tr>
+        <td><label>Class</label></td>
+        <td><input type="text" id="c"></td>
+    </tr>
+    <tr>
+        <td><label>Roll No:</label></td>
+        <td><input type="text" id="r"></td>
+    </tr>
+    <tr>
+        <td><label>Math</label></td>
+        <td><input type="text" id="mm"></td>
+    </tr>
+    <tr>
+        <td><label>English</label></td>
+        <td><input type="text" id="em"></td>
+    </tr>
+    <tr>
+        <td><label>Urdu</label></td>
+        <td><input type="text" id="um"></td>
+    </tr>
+    <tr>
+        <td><label>Chemistry</label></td>
+        <td><input type="text" id="cm"></td>
+    </tr>
+    <tr>
+        <td><label>Physics</label></td>
+        <td><input type="text" id="pm"></td>
+    </tr>
+    <tr>  
+        <td colspan="2"><input type="button" value="Submit" onclick="Check()"></td>
+    </tr>
+</form>
+   </table>
+   <h1 id="display1"></h1>
+   <h1 id="display2"></h1>
+   <h1 id="display3"></h1>
+   <h1 id="display4"></h1>
+   <h1 id="display5"></h1>
+   <h1 id="display6"></h1>
+   <h1 id="display7"></h1>
+</body>
+</html>
+<script src="bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+<script>
+    function Check(){
+        var Name = document.getElementById("n").value;
+        var Fname = document.getElementById("fn").value;
+        var standerd = document.getElementById("c").value;
+        var roll = document.getElementById("r").value;
+        var Math = document.getElementById("mm").value;
+        var Urdu = document.getElementById("um").value;
+        var English = document.getElementById("em").value;
+        var Chemistry = document.getElementById("cm").value;
+        var Physics = document.getElementById("pm").value;
+        var d1 = document.getElementById("display1");
+        var d2 = document.getElementById("display2");
+        var d3 = document.getElementById("display3");
+        var d4 = document.getElementById("display4");
+        var d5 = document.getElementById("display5");
+        var d6 = document.getElementById("display6");
+        var d7 = document.getElementById("display7");
+        var obtaindmark =parseInt(Math) + parseInt(English) +parseInt(Chemistry) +parseInt(Urdu) + parseInt(Physics);
+        var percentage = obtaindmark  * 100 / 500
+        var Percantage = d7.innerHTML
+           if(percentage >= 80){
+            d7.innerHTML = ["A+"] 
+        }
+        else if(percentage >= 70){
+            d7.innerHTML = ["A"]
+        }
+        else if(percentage >= 60){
+            d7.innerHTML = ["B"]
+        }
+        else if(percentage >= 50){
+            d7.innerHTML = ["C"]
+        }
+        else if(percentage >= 40){
+            d7.innerHTML = ["D"]
+        }
+        else if(percentage >= 33){
+            d7.innerHTML = ["E"]
+        }
+        else{
+            d7.innerHTML = ["Fail"]
+        }
+        document.write("<table border='3'>")
+            document.write("<tr>")
+
+         d1.innerHTML = document.write("<th>Name<th>" +  Name +"</td>")
+             document.write("</tr>")
+             document.write("<tr>")
+        d2.innerHTML = document.write("<th> Father Name<th>" + Fname +"</td>") 
+         document.write("</tr>")
+          document.write("<tr>")
+        d3.innerHTML = document.write("<th> Class<th>" + standerd +"</td>")
+         document.write("</tr>")
+          document.write("<tr>")
+        d4.innerHTML = document.write("<th> Roll <th>" + roll +"</td>")
+         document.write("</tr>")
+          document.write("<tr>")
+        d5.innerHTML =document.write( "<th> Obtaindmark<th>" + obtaindmark +"</td>")
+         document.write("</tr>")
+          document.write("<tr>")
+        d6.innerHTML = document.write("<th> Percantage<th>" + percentage+"</td>")
+         document.write("</tr>")
+          document.write("<tr>")
+        d6.innerHTML = document.write("<th> Grade<th>" + d7.innerHTML +"</td>")
+         document.write("</tr>")
+     
+    }
+     
+  document.write("</table>")
+</script>
